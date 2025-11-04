@@ -1,0 +1,25 @@
+{
+    "name": "Instablocker",
+    "description": "Hides unwanted elements from Instagram",
+    "host_permissions": ["https://www.instagram.com/*", "https://www.messenger.com/*", "https://www.reddit.com/*", "https://www.linkedin.com/*"],
+    "permissions": [
+      "scripting",
+      "activeTab"
+  ],
+   
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "instablocker.html",
+      "default_icon": "instablock.png"
+    },
+
+    "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*", "https://www.messenger.com/*", "https://www.reddit.com/*", "https://www.linkedin.com/*"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+
+  }
